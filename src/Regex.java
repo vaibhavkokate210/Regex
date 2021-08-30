@@ -21,6 +21,12 @@ public class Regex
 		Pattern p=Pattern.compile(reg);
 		return p.matcher(str).matches();
 	}
+	public static boolean getMobile(String str)
+	{
+		String reg="[0-9]{2}\\s[0-9]{10}";
+		Pattern p=Pattern.compile(reg);
+		return p.matcher(str).matches();
+	}
 	public static void main(String[] args) 
 	{
     	Scanner sc=new Scanner(System.in);
@@ -33,6 +39,9 @@ public class Regex
 		System.out.println("Enter Email Name : ");
 		String email=sc.nextLine();
 		boolean emailResult=getEmail(email);
+    	System.out.println("Enter Mobile No : ");
+ 		String mobile=sc.nextLine();
+ 		boolean mobileResult=getMobile(mobile);
 		if(firstNameResult==true)
 			System.out.println("First Name is correct ");
 		else
@@ -45,6 +54,11 @@ public class Regex
 			System.out.println("Email Name is correct ");
 		else
 			System.out.println("Email Name is not correct");
+		
+		if(mobileResult==true)
+			System.out.println("Mobile numnber is correct ");
+		else
+			System.out.println("Mobile numnber is not correct");
 		
 	}
 	
