@@ -15,15 +15,24 @@ public class Regex
 		Pattern p=Pattern.compile(reg);
 		return p.matcher(str).matches();
 	}
+	public static boolean getEmail(String str)
+	{
+		String reg="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
+		Pattern p=Pattern.compile(reg);
+		return p.matcher(str).matches();
+	}
 	public static void main(String[] args) 
 	{
-		Scanner sc=new Scanner(System.in);
-		System.out.println("Enter first Name : ");
-		String firstName=sc.nextLine();
+    	Scanner sc=new Scanner(System.in);
+    	System.out.println("Enter first Name : ");
+ 		String firstName=sc.nextLine();
 		System.out.println("Enter Last Name : ");
 		String lastName=sc.nextLine();
 		boolean firstNameResult=getFirstName(firstName);
 		boolean lastNameResult=getFirstName(firstName);
+		System.out.println("Enter Email Name : ");
+		String email=sc.nextLine();
+		boolean emailResult=getEmail(email);
 		if(firstNameResult==true)
 			System.out.println("First Name is correct ");
 		else
@@ -32,6 +41,11 @@ public class Regex
 			System.out.println("Last Name is correct ");
 		else
 			System.out.println("Last Name is not correct");
+		if(emailResult==true)
+			System.out.println("Email Name is correct ");
+		else
+			System.out.println("Email Name is not correct");
+		
 	}
 	
 }
