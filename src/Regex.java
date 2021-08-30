@@ -27,6 +27,12 @@ public class Regex
 		Pattern p=Pattern.compile(reg);
 		return p.matcher(str).matches();
 	}
+	public static boolean getPassword(String str)
+	{
+		String reg="[a-zA-Z0-9]{8,}";
+		Pattern p=Pattern.compile(reg);
+		return p.matcher(str).matches();
+	}
 	public static void main(String[] args) 
 	{
     	Scanner sc=new Scanner(System.in);
@@ -42,6 +48,9 @@ public class Regex
     	System.out.println("Enter Mobile No : ");
  		String mobile=sc.nextLine();
  		boolean mobileResult=getMobile(mobile);
+    	System.out.println("Enter Password Name : ");
+ 		String password=sc.nextLine();
+ 		boolean passwordResult=getPassword(password);
 		if(firstNameResult==true)
 			System.out.println("First Name is correct ");
 		else
@@ -59,6 +68,10 @@ public class Regex
 			System.out.println("Mobile numnber is correct ");
 		else
 			System.out.println("Mobile numnber is not correct");
+ 		if(passwordResult==true)
+			System.out.println("Password is correct ");
+		else
+			System.out.println("Password is not correct");
 		
 	}
 	
