@@ -51,6 +51,7 @@ public class Regex
     	System.out.println("Enter Password Name : ");
  		String password=sc.nextLine();
  		boolean passwordResult=getPassword(password);
+ 		
 		if(firstNameResult==true)
 			System.out.println("First Name is correct ");
 		else
